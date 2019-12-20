@@ -10,13 +10,14 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/ibc'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+#Initialize db
 db = SQLAlchemy(app)
-
-
+#Initialize Marshmallow
+ma = Marshmallow(app)
 
 @app.route('/', methods=['GET'])
 def getStuff():
-    return jsonify({'msg' : 'waddup!!!!'})
+    return jsonify({'msg' : 'waddup bozo!!!'})
 
 #run server
 if __name__ == '__main__':
