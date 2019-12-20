@@ -6,6 +6,9 @@ import os
 #init
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def getStuff():
+    return jsonify({'msg' : 'waddup'})
 
 #run server
 if __name__ == '__main__':
