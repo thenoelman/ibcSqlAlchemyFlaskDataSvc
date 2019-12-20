@@ -15,6 +15,12 @@ db = SQLAlchemy(app)
 #Initialize Marshmallow
 ma = Marshmallow(app)
 
+#Class/Model
+class ibc_league(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    league_abbr = db.Column(db.String(255), unique=True)
+    league_name = db.Column(db.String(255), unique=True)
+
 @app.route('/', methods=['GET'])
 def getStuff():
     return jsonify({'msg' : 'waddup bozo!!!'})
